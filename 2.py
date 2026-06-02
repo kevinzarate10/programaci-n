@@ -1,34 +1,17 @@
-def esPanvocalica(palabra):
-    palabra = palabra.lower()
-    
-    tiene_a = False
-    tiene_e = False
-    tiene_i = False
-    tiene_o = False
-    tiene_u = False
-    
-    for letra in palabra:
-        if letra == 'a':
-            tiene_a = True
-        elif letra == 'e':
-            tiene_e = True
-        elif letra == 'i':
-            tiene_i = True
-        elif letra == 'o':
-            tiene_o = True
-        elif letra == 'u':
-            tiene_u = True
-
-    return tiene_a and tiene_e and tiene_i and tiene_o and tiene_u
-
-
-while True:
-    entrada = input("ingrese una palabra (o escriba 'salir' para terminar): ")
-    
-    if entrada.lower() == 'salir':
-        break
+def calcular_raices(a, b, c):
+    if a == 0:
+        return "no es una ecuación cuadrática (A no puede ser 0)"
         
-    resultado = esPanvocalica(entrada)
+    disc = b**2 - 4*a*c
+    if disc < 0:
+        return "si tiene raices"
     
-    print(f"{entrada} es panvolica ? ")
-    print(f"{resultado}")
+    x1 = (-b + disc**0.5) / (2*a)
+    x2 = (-b - disc**0.5) / (2*a)
+    return x1, x2
+
+a = float(input("a: "))
+b = float(input("b: "))
+c = float(input("c: "))
+
+print("tiene raices ?", calcular_raices(a, b, c))
