@@ -1,0 +1,5 @@
+Juan,8
+Ana,5
+Pedro,10
+Lucía,7
+Mateo,3
